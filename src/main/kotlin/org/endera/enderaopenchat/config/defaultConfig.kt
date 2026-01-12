@@ -53,7 +53,7 @@ val defaultConfig = ConfigScheme(
     ),
     colorPermissions = ColorPermissions(
         enabled = true,
-        defaultColorPermission = "echat.color",
+        colorPermissionPrefix = "echat.color.",
         hexColorPermission = "echat.color.hex",
     )
 )

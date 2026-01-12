@@ -62,6 +62,6 @@ data class Usage(
 @Serializable
 data class ColorPermissions(
     val enabled: Boolean,
-    val defaultColorPermission: String,
+    val colorPermissionPrefix: String,
     val hexColorPermission: String,
 )
