@@ -50,5 +50,10 @@ val defaultConfig = ConfigScheme(
         usage = Usage(
             msg = "{prefix} <red>Command usage: /msg (player) (message)"
         )
+    ),
+    colorPermissions = ColorPermissions(
+        enabled = true,
+        defaultColorPermission = "echat.color",
+        hexColorPermission = "echat.color.hex",
     )
 )

@@ -16,6 +16,7 @@ import org.endera.enderaopenchat.utils.cparse
 import org.endera.enderaopenchat.utils.isPlayerVanished
 import org.endera.enderaopenchat.utils.nearbyPlayers
 import org.endera.enderaopenchat.utils.papiParse
+import org.endera.enderaopenchat.utils.processColorPermissions
 
 @Suppress("unused")
 class ChatListener : Listener {
@@ -107,9 +108,11 @@ class ChatListener : Listener {
             message
         }
 
+        val processedMessage = processColorPermissions(player, stringMessage)
+
         event.message(
             channel.format
-                .replace("{message}", stringMessage)
+                .replace("{message}", processedMessage)
                 .replace("{player}", player.name)
                 .papiParse(player)
                 .stringToComponent()

@@ -8,6 +8,7 @@ data class ConfigScheme(
     val personalMessages: Msg,
     val customLeaveJoinDeath: CustomLeaveJoinDeath,
     val messages: Messages,
+    val colorPermissions: ColorPermissions,
 )
 
 @Serializable
@@ -56,4 +57,11 @@ data class Messages(
 @Serializable
 data class Usage(
     val msg: String
+)
+
+@Serializable
+data class ColorPermissions(
+    val enabled: Boolean,
+    val defaultColorPermission: String,
+    val hexColorPermission: String,
 )
