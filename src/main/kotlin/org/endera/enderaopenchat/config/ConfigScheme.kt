@@ -47,6 +47,7 @@ data class Messages(
     val reload: String,
     val usage: Usage,
     val nochannelpermission: String,
+    val nocommandpermission: String,
     val localnoone: String,
     val playernotfound: String,
 )

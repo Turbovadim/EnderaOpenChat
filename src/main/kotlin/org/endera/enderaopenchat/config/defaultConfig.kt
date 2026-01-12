@@ -45,6 +45,7 @@ val defaultConfig = ConfigScheme(
         reload = "{prefix} Plugin configuration reloaded",
         playernotfound = "{prefix} <red>Player not found",
         nochannelpermission = "{prefix} <red>You do not have permission to use this channel",
+        nocommandpermission = "{prefix} <red>You do not have permission to use this command",
         localnoone = "<red>No players nearby!",
         usage = Usage(
             msg = "{prefix} <red>Command usage: /msg (player) (message)"

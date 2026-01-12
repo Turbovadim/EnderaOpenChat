@@ -4,7 +4,6 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.endera.enderalib.utils.PluginException
-import org.endera.enderalib.utils.checkPermission
 import org.endera.enderaopenchat.EnderaOpenChat
 import org.endera.enderaopenchat.utils.cparse
 
@@ -14,14 +13,17 @@ class ReloadCommand : CommandExecutor {
 
         if (args.size != 1) return true
 
-        sender.checkPermission("echat.reload") {
-            try {
-                EnderaOpenChat.config = EnderaOpenChat.configurationManager.loadOrCreateConfig()
-                sender.sendMessage(EnderaOpenChat.config.messages.reload.cparse())
-            } catch (e: PluginException) {
-                EnderaOpenChat.instance.logger.severe("Critical error loading configuration: ${e.message}")
-                EnderaOpenChat.instance.server.pluginManager.disablePlugin(EnderaOpenChat.instance)
-            }
+        if (!sender.hasPermission("echat.reload")) {
+            sender.sendMessage(EnderaOpenChat.config.messages.nocommandpermission.cparse())
+            return true
+        }
+
+        try {
+            EnderaOpenChat.config = EnderaOpenChat.configurationManager.loadOrCreateConfig()
+            sender.sendMessage(EnderaOpenChat.config.messages.reload.cparse())
+        } catch (e: PluginException) {
+            EnderaOpenChat.instance.logger.severe("Critical error loading configuration: ${e.message}")
+            EnderaOpenChat.instance.server.pluginManager.disablePlugin(EnderaOpenChat.instance)
         }
 
         return true
