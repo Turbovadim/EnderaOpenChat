@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 plugins {
-    kotlin("jvm") version "2.2.0"
-    kotlin("plugin.serialization") version "2.2.0" apply true
+    kotlin("jvm") version "2.3.0"
+    kotlin("plugin.serialization") version "2.3.0" apply true
 }
 
 group = "org.endera"
@@ -30,7 +30,7 @@ dependencies {
 
     // Local Lib
 //    implementation("org.endera.enderalib:enderalib:1.0-SNAPSHOT")
-    implementation("com.github.Endera-Org:EnderaLib:1.4.5")
+    implementation("com.github.Endera-Org:EnderaLib:1.4.7")
     implementation("com.github.Zrips:CMI-API:9.7.14.3")
 }
 
