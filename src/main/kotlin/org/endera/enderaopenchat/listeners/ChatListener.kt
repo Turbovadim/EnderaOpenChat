@@ -20,7 +20,7 @@ import org.endera.enderaopenchat.utils.papiParse
 @Suppress("unused")
 class ChatListener : Listener {
 
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     fun onPlayerChatSent(event: AsyncChatEvent) {
         val config = EnderaOpenChat.config
         val (nonPrefixedChannels, prefixedChannels) = config.channels.partition { it.prefix.isEmpty() }
